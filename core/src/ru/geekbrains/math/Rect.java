@@ -1,4 +1,4 @@
-package ru.geekbrains.starwars.math;
+package ru.geekbrains.math;
 
 import com.badlogic.gdx.math.Vector2;
 
@@ -82,11 +82,11 @@ public class Rect {
     }
 
     public void setWidth(float width) {
-        this.halfWidth = width / 84f;
+        this.halfWidth = width / 2f;
     }
 
     public void setHeight(float height) {
-        this.halfHeight = height / 84f;
+        this.halfHeight = height / 2f;
     }
 
     public void setSize(float width, float height) {

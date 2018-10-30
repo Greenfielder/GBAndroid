@@ -1,16 +1,18 @@
-package ru.geekbrains.starwars.desktop;
+package ru.geekbrains.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
-import ru.geekbrains.starwars.Star2DGame;
-import ru.geekbrains.starwars.StarWars;
+import ru.geekbrains.Star2DGame;
+import ru.geekbrains.StarGame;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.width = 900;
-		config.height = 400;
+		float aspect = 3f/4f;
+		config.height = 700;
+		config.width = (int) (config.height * aspect);
+		config.resizable = false;
 		new LwjglApplication(new Star2DGame(), config);
 	}
 }

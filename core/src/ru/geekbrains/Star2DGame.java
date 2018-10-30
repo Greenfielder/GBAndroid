@@ -1,8 +1,9 @@
-package ru.geekbrains.starwars;
+package ru.geekbrains;
 
 import com.badlogic.gdx.Game;
 
-import ru.geekbrains.starwars.screen.MenuScreen;
+import ru.geekbrains.screen.MenuScreen;
+
 
 public class Star2DGame extends Game {
     @Override

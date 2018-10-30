@@ -1,4 +1,5 @@
-package ru.geekbrains.starwars.base;
+package ru.geekbrains.base;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
@@ -8,8 +9,8 @@ import com.badlogic.gdx.math.Matrix3;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 
-import ru.geekbrains.starwars.math.MatrixUtils;
-import ru.geekbrains.starwars.math.Rect;
+import ru.geekbrains.math.MatrixUtils;
+import ru.geekbrains.math.Rect;
 
 public class Base2DScreen implements Screen, InputProcessor {
 
@@ -50,11 +51,16 @@ public class Base2DScreen implements Screen, InputProcessor {
         screenBounds.setBottom(0);
 
         float aspect = width / (float) height;
-        worldBounds.setHeight(42f);
-        worldBounds.setWidth(42f*aspect);
+        worldBounds.setHeight(1f);
+        worldBounds.setWidth(1f*aspect);
         MatrixUtils.calcTransitionMatrix(worldToGl, worldBounds, glBounds);
         batch.setProjectionMatrix(worldToGl);
         MatrixUtils.calcTransitionMatrix(screenToWorld, screenBounds, worldBounds);
+        resize(worldBounds);
+    }
+
+    public void resize(Rect worldBounds) {
+
     }
 
     @Override
