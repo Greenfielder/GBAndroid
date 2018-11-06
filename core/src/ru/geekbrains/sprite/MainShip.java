@@ -28,19 +28,19 @@ public class MainShip extends Sprite {
 
     private Rect worldBounds;
 
-    public MainShip(TextureAtlas atlas, BulletPool bulletPool) {
+//    public MainShip(TextureAtlas atlas, BulletPool bulletPool) {
+//        super(atlas.findRegion("main_ship"), 1, 2, 2);
+//        this.atlas = atlas;
+//        setHeightProportion(0.15f);
+//        this.bulletPool = bulletPool;
+//    }
+
+    public MainShip(TextureAtlas atlas, BulletPool bulletPool, Sound sound) {
         super(atlas.findRegion("main_ship"), 1, 2, 2);
         this.atlas = atlas;
         setHeightProportion(0.15f);
         this.bulletPool = bulletPool;
     }
-
-//    public MainShip(TextureAtlas atlas, BulletPool bulletPool, Sound sound) {
-//        super(atlas.findRegion("main_ship"), 1, 2, 2, sound);
-//        this.atlas = atlas;
-//        setHeightProportion(0.15f);
-//        this.bulletPool = bulletPool;
-//    }
 
     @Override
     public void update(float delta) {

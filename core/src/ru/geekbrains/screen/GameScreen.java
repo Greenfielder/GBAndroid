@@ -15,7 +15,6 @@ import ru.geekbrains.pool.BulletPool;
 import ru.geekbrains.sprite.Background;
 import ru.geekbrains.sprite.MainShip;
 import ru.geekbrains.sprite.Star;
-import ru.geekbrains.sprite.StartButtom;
 
 
 public class GameScreen extends Base2DScreen {
@@ -25,7 +24,7 @@ public class GameScreen extends Base2DScreen {
     private Texture bgTexture;
     private Background background;
     private Music bgmusic;
-    private Sound shoot;
+    private Sound soundShoot;
     private TextureAtlas textureAtlas;
     private TextureAtlas textureAtlas2;
     private TextureAtlas textureAtlas3;
@@ -49,14 +48,14 @@ public class GameScreen extends Base2DScreen {
         bgmusic.setLooping(true);
         bgmusic.play();
 
-        shoot = Gdx.audio.newSound(Gdx.files.internal("mp3/Fire.mp3"));
+        soundShoot = Gdx.audio.newSound(Gdx.files.internal("mp3/fire.mp3"));
 
         stars =new Star[STAR_COUNT];
         for (int i = 0; i < stars.length; i++) {
             stars[i] = new Star(textureAtlas);
         }
         bulletPool = new BulletPool();
-        mainShip = new MainShip(textureAtlas3, bulletPool);
+        mainShip = new MainShip(textureAtlas3, bulletPool, soundShoot);
     }
 
     @Override
@@ -110,6 +109,8 @@ public class GameScreen extends Base2DScreen {
     public void dispose() {
         bgTexture.dispose();
         textureAtlas.dispose();
+        bgmusic.dispose();
+        soundShoot.dispose();
         super.dispose();
     }
 
@@ -122,6 +123,7 @@ public class GameScreen extends Base2DScreen {
     @Override
     public boolean keyUp(int keycode) {
         mainShip.keyUp(keycode);
+        soundShoot.play();
         return super.keyUp(keycode);
     }
 
