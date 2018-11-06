@@ -1,22 +1,21 @@
 package ru.geekbrains.sprite;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
-import ru.geekbrains.base.Sprite;
+import ru.geekbrains.base.ActionListener;
+import ru.geekbrains.base.ScaledTouchUpButton;
 import ru.geekbrains.math.Rect;
 
-public class StartButtom extends Sprite {
+public class StartButtom extends ScaledTouchUpButton {
 
-    public StartButtom(TextureAtlas atlas) {
-        super(atlas.findRegion("start"));
+    public StartButtom(TextureAtlas atlas, ActionListener actionListener) {
+        super(atlas.findRegion("start"), actionListener);
         setHeightProportion(0.1f);
     }
 
     @Override
     public void resize(Rect worldBounds) {
-        setHeightProportion(worldBounds.getHeight());
-        pos.set(worldBounds.pos);
+        this.setBottom(0.07f);
     }
 
 }

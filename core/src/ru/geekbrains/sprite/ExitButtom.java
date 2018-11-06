@@ -1,21 +1,20 @@
 package ru.geekbrains.sprite;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import ru.geekbrains.base.Sprite;
+
 import ru.geekbrains.math.Rect;
+import ru.geekbrains.base.ActionListener;
+import ru.geekbrains.base.ScaledTouchUpButton;
 
-public class ExitButtom extends Sprite {
+public class ExitButtom extends ScaledTouchUpButton {
 
-    public ExitButtom(TextureAtlas atlas) {
-        super(atlas.findRegion("exit"));
+    public ExitButtom(TextureAtlas atlas, ActionListener actionListener) {
+        super(atlas.findRegion("exit"), actionListener);
         setHeightProportion(0.1f);
-        this.setBottom(-0.2f);
     }
 
     @Override
     public void resize(Rect worldBounds) {
-        setHeightProportion(worldBounds.getHeight());
-        pos.set(worldBounds.pos);
+        this.setBottom(-0.07f);
     }
-
 }

@@ -1,0 +1,33 @@
+gametx.png
+size: 1788, 512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bulletEnemy
+  rotate: false
+  xy: 0, 0
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+bulletMainShip
+  rotate: false
+  xy: 16, 0
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+enemy_ship
+  rotate: false
+  xy: 32, 0
+  size: 732, 436
+  orig: 732, 436
+  offset: 0, 0
+  index: -1
+main_ship
+  rotate: false
+  xy: 764, 0
+  size: 1024, 512
+  orig: 1024, 512
+  offset: 0, 0
+  index: -1
