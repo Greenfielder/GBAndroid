@@ -1,5 +1,5 @@
 gametx.png
-size: 1788, 512
+size: 1788, 1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -17,11 +17,18 @@ bulletMainShip
   orig: 16, 16
   offset: 0, 0
   index: -1
-enemy_ship
+enemy_ship0
   rotate: false
   xy: 32, 0
   size: 732, 436
   orig: 732, 436
+  offset: 0, 0
+  index: -1
+enemy_ship1
+  rotate: false
+  xy: 0, 512
+  size: 1084, 512
+  orig: 1084, 512
   offset: 0, 0
   index: -1
 main_ship

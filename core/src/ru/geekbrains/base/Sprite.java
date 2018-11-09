@@ -1,8 +1,6 @@
 package ru.geekbrains.base;
 
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 
@@ -20,10 +18,6 @@ public class Sprite extends Rect {
 
     public Sprite() {
     }
-
-//    public Sprite(TextureRegion region, int rows, int cols, int frames, Sound sound) {
-//        this.regions = Regions.split(region, rows, cols, frames);
-//    }
 
     public Sprite(TextureRegion region) {
         if (region == null) {
