@@ -9,6 +9,7 @@ import ru.geekbrains.base.Ship;
 import ru.geekbrains.base.Sprite;
 import ru.geekbrains.math.Rect;
 import ru.geekbrains.pool.BulletPool;
+import ru.geekbrains.pool.ExplosionPool;
 
 
 public class MainShip extends Ship {
@@ -23,7 +24,7 @@ public class MainShip extends Ship {
     private int leftPointer = INVALID_POINTER;
     private int rightPointer = INVALID_POINTER;
 
-    public MainShip(TextureAtlas atlas, BulletPool bulletPool, Sound shootSound) {
+    public MainShip(TextureAtlas atlas, BulletPool bulletPool, ExplosionPool explosionPool, Sound shootSound) {
         super(atlas.findRegion("main_ship"), 1, 2, 2, shootSound);
         setHeightProportion(0.15f);
         this.bulletPool = bulletPool;
@@ -32,6 +33,8 @@ public class MainShip extends Ship {
         this.bulletDamage = 1;
         this.reloadInterval = 0.2f;
         this.bulletRegion = atlas.findRegion("bulletMainShip");
+        this.explosionPool = explosionPool;
+        this.hp = 10;
     }
 
     @Override
@@ -145,5 +148,20 @@ public class MainShip extends Ship {
 
     private void stop() {
         v.setZero();
+    }
+
+    public boolean isBulletCollision(Rect bullet) {
+        return !(bullet.getRight() < getLeft()
+                || bullet.getLeft() > getRight()
+                || bullet.getBottom() > pos.y
+                || bullet.getTop() <getBottom()
+        );
+    }
+
+    @Override
+    public void destroy() {
+        boom();
+        hp = 0;
+        super.destroy();
     }
 }
