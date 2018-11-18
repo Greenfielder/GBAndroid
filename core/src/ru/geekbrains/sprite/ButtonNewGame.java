@@ -6,10 +6,10 @@ import ru.geekbrains.base.ActionListener;
 import ru.geekbrains.base.ScaledTouchUpButton;
 import ru.geekbrains.math.Rect;
 
-public class StartButtom extends ScaledTouchUpButton {
 
-    public StartButtom(TextureAtlas atlas, ActionListener actionListener) {
-        super(atlas.findRegion("start"), actionListener);
+public class ButtonNewGame extends ScaledTouchUpButton {
+    public ButtonNewGame(TextureAtlas atlas, ActionListener actionListener) {
+        super(atlas.findRegion("new_game"), actionListener);
         setHeightProportion(0.25f);
     }
 
@@ -17,5 +17,4 @@ public class StartButtom extends ScaledTouchUpButton {
     public void resize(Rect worldBounds) {
         this.setRight(-0.05f);
     }
-
 }
